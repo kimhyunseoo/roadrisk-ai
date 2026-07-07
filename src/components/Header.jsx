@@ -16,15 +16,15 @@ export default function Header() {
           </span>
           <div className="leading-tight">
             <p className="font-bold text-slate-900">RoadRisk AI</p>
-            <p className="text-[11px] text-slate-500">도로 균열·포트홀 위험도 진단</p>
+            <p className="text-[11px] text-slate-500">Road Crack &amp; Pothole Risk Diagnosis</p>
           </div>
         </Link>
         <nav className="flex items-center gap-1">
           <NavLink to="/" className={navLinkClass} end>
-            홈
+            Home
           </NavLink>
           <NavLink to="/dashboard" className={navLinkClass}>
-            지자체 대시보드
+            City Dashboard
           </NavLink>
         </nav>
       </div>

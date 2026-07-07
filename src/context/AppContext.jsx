@@ -11,7 +11,7 @@ export function AppProvider({ children }) {
   const analyzePhoto = (file) => {
     const imageUrl = URL.createObjectURL(file)
     const analysis = generateAnalysis(imageUrl)
-    analysis.createdAt = '방금 전'
+    analysis.createdAt = 'Just now'
     setCurrentAnalysis({ ...analysis, reported: false })
     setStampCounter((c) => c + 1)
     return analysis

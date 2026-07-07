@@ -32,9 +32,9 @@ export default function UploadDropzone({ onFileSelected }) {
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-blue-700">
         <UploadCloud size={28} />
       </span>
-      <p className="mt-4 text-lg font-semibold text-slate-800">도로 사진을 업로드하세요</p>
+      <p className="mt-4 text-lg font-semibold text-slate-800">Upload a road photo</p>
       <p className="mt-1 text-sm text-slate-500">
-        클릭하거나 파일을 이곳에 끌어다 놓으세요 (JPG, PNG)
+        Click or drag and drop a file here (JPG, PNG)
       </p>
 
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -47,7 +47,7 @@ export default function UploadDropzone({ onFileSelected }) {
           className="inline-flex items-center gap-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-800"
         >
           <Camera size={16} />
-          사진 업로드
+          Upload Photo
         </button>
       </div>
 

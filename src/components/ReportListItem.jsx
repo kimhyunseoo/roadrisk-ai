@@ -22,10 +22,10 @@ export default function ReportListItem({ report, isSelected, onSelect }) {
       </div>
       <div className="mt-3 flex gap-4 text-xs text-slate-500">
         <span className="inline-flex items-center gap-1">
-          <Percent size={13} /> 균열 면적 {report.crackAreaPercent}%
+          <Percent size={13} /> Crack area {report.crackAreaPercent}%
         </span>
         <span className="inline-flex items-center gap-1">
-          <Ruler size={13} /> 길이 {report.crackLengthCm}cm
+          <Ruler size={13} /> Length {report.crackLengthIn} in
         </span>
       </div>
     </button>

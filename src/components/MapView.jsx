@@ -38,7 +38,7 @@ export default function MapView({ reports, center = CITY_MAP_CENTER, height = 42
                   <p className="font-semibold text-slate-800">{report.location.address}</p>
                   <RiskBadge level={report.riskLevel} />
                   <p className="text-slate-500">
-                    균열 면적 {report.crackAreaPercent}% · 길이 {report.crackLengthCm}cm
+                    Crack area {report.crackAreaPercent}% &middot; Length {report.crackLengthIn} in
                   </p>
                 </div>
               </Popup>

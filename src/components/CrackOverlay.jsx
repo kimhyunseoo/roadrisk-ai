@@ -5,7 +5,7 @@ export default function CrackOverlay({ imageUrl, regions, riskLevel }) {
 
   return (
     <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-900">
-      <img src={imageUrl} alt="업로드한 도로 사진" className="max-h-[480px] w-full object-cover" />
+      <img src={imageUrl} alt="Uploaded road photo" className="max-h-[480px] w-full object-cover" />
       <div className="pointer-events-none absolute inset-0">
         {regions.map((r, i) => (
           <div
@@ -25,7 +25,7 @@ export default function CrackOverlay({ imageUrl, regions, riskLevel }) {
         ))}
       </div>
       <span className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white">
-        AI 균열 탐지 결과 (시뮬레이션)
+        AI Crack Detection Result (Simulated)
       </span>
     </div>
   )

@@ -17,7 +17,7 @@ export default function RiskBadge({ level, size = 'md' }) {
       className={`inline-flex items-center rounded-full border font-semibold ${style.badge} ${sizeClass}`}
     >
       <Icon size={size === 'lg' ? 18 : 14} />
-      {style.labelKo} ({style.label})
+      {style.label} Risk
     </span>
   )
 }

@@ -29,10 +29,10 @@ export default function DashboardPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <div className="flex items-center gap-2 text-slate-700">
         <LayoutGrid size={20} />
-        <h1 className="text-2xl font-bold text-slate-900">지자체 대시보드</h1>
+        <h1 className="text-2xl font-bold text-slate-900">City Dashboard</h1>
       </div>
       <p className="mt-1 text-sm text-slate-500">
-        시민이 신고한 도로 위험 지역을 지도와 목록으로 확인하고 유지보수 우선순위를 판단하세요.
+        Review citizen-reported road risk locations on the map and list to prioritize maintenance.
       </p>
 
       <div className="mt-5 grid grid-cols-3 gap-3 sm:max-w-md">
@@ -41,7 +41,7 @@ export default function DashboardPage() {
           return (
             <div key={level} className={`rounded-xl border p-3 text-center ${style.badge}`}>
               <p className="text-2xl font-bold">{counts[level] ?? 0}</p>
-              <p className="text-xs font-medium">{style.labelKo} 위험</p>
+              <p className="text-xs font-medium">{style.label} Risk</p>
             </div>
           )
         })}
@@ -59,10 +59,10 @@ export default function DashboardPage() {
                 : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
             }`}
           >
-            {f === 'All' ? '전체' : RISK_STYLES[f].labelKo}
+            {f === 'All' ? 'All' : RISK_STYLES[f].label}
           </button>
         ))}
-        <span className="ml-auto text-xs text-slate-400">총 {filteredReports.length}건</span>
+        <span className="ml-auto text-xs text-slate-400">{filteredReports.length} reports</span>
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-5">
@@ -85,7 +85,7 @@ export default function DashboardPage() {
           ))}
           {filteredReports.length === 0 && (
             <div className="rounded-xl border border-dashed border-slate-300 p-6 text-center text-sm text-slate-400">
-              해당 위험도의 신고 내역이 없습니다.
+              No reports at this risk level.
             </div>
           )}
         </div>

@@ -39,8 +39,8 @@ export default function ResultPage() {
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">진단 결과</h1>
-          <p className="mt-1 text-sm text-slate-500">AI가 분석한 도로 균열·포트홀 위험도입니다.</p>
+          <h1 className="text-2xl font-bold text-slate-900">Diagnosis Result</h1>
+          <p className="mt-1 text-sm text-slate-500">AI-analyzed road crack and pothole risk.</p>
         </div>
         <button
           type="button"
@@ -48,7 +48,7 @@ export default function ResultPage() {
           className="inline-flex items-center gap-1.5 self-start rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50"
         >
           <RefreshCcw size={15} />
-          다른 사진 진단하기
+          Diagnose another photo
         </button>
       </div>
 
@@ -59,26 +59,27 @@ export default function ResultPage() {
 
         <div className="flex flex-col gap-4 lg:col-span-2">
           <div className={`rounded-2xl border p-5 ${riskStyle.badge}`}>
-            <p className="text-xs font-medium opacity-80">종합 위험도</p>
+            <p className="text-xs font-medium opacity-80">Overall Risk</p>
             <div className="mt-2 flex items-center justify-between">
               <RiskBadge level={a.riskLevel} size="lg" />
             </div>
             <p className="mt-3 text-xs leading-relaxed opacity-80">
-              균열 면적, 강수량, 교통량, 도로유형을 종합해 산정한 포트홀 발전 위험도입니다. (시뮬레이션 값)
+              Pothole development risk estimated from crack area, rainfall, traffic volume, and
+              road type. (Simulated value)
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <MetricCard icon={Percent} label="균열 면적 비율" value={`${a.crackAreaPercent}%`} />
-            <MetricCard icon={Ruler} label="균열 길이" value={`${a.crackLengthCm} cm`} />
-            <MetricCard icon={CloudRain} label="최근 강수량" value={`${a.rainfallMm} mm`} />
-            <MetricCard icon={Car} label="일 교통량" value={`${a.trafficVolume.toLocaleString()} 대`} />
+            <MetricCard icon={Percent} label="Crack Area" value={`${a.crackAreaPercent}%`} />
+            <MetricCard icon={Ruler} label="Crack Length" value={`${a.crackLengthIn} in`} />
+            <MetricCard icon={CloudRain} label="Recent Rainfall" value={`${a.rainfallIn} in`} />
+            <MetricCard icon={Car} label="Daily Traffic" value={`${a.trafficVolume.toLocaleString()} veh`} />
           </div>
 
           <div className="rounded-xl border border-slate-200 bg-white p-4">
             <div className="flex items-center gap-2 text-slate-400">
               <Route size={16} />
-              <span className="text-xs font-medium">도로유형</span>
+              <span className="text-xs font-medium">Road Type</span>
             </div>
             <p className="mt-1.5 text-sm font-semibold text-slate-800">{a.roadType}</p>
           </div>
@@ -96,12 +97,12 @@ export default function ResultPage() {
             {a.reported ? (
               <>
                 <CheckCircle2 size={16} />
-                지자체에 신고 완료
+                Reported to City
               </>
             ) : (
               <>
                 <Send size={16} />
-                지자체에 신고하기
+                Report to City
               </>
             )}
           </button>
@@ -111,11 +112,11 @@ export default function ResultPage() {
       <div className="mt-8">
         <div className="mb-3 flex items-center gap-2 text-slate-700">
           <MapPin size={18} />
-          <h2 className="font-semibold">촬영 위치</h2>
+          <h2 className="font-semibold">Location</h2>
         </div>
         <p className="mb-3 text-sm text-slate-500">{a.location.address}</p>
         <p className="mb-3 text-xs text-slate-400">
-          GPS 좌표: {a.location.lat.toFixed(5)}, {a.location.lng.toFixed(5)}
+          GPS coordinates: {a.location.lat.toFixed(5)}, {a.location.lng.toFixed(5)}
         </p>
         <MapView reports={[a]} center={a.location} height={280} />
       </div>
